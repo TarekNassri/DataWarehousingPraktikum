@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Verbindungs-Manager für Author_Publication"
+  DTS:DTSID="{8EFC81DF-16CC-444F-AC34-FD2CA45A2645}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1031"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="W:\dblp\author_publication.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Publication_ID"
+          DTS:DTSID="{83801D8A-0C51-460D-A984-B26BBB6C7388}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Author_ID"
+          DTS:DTSID="{D3F30E9D-2B4D-417C-8CE0-FA1AFE3AF1DF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000A_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Author_Position"
+          DTS:DTSID="{8BD98012-BEFE-431A-8FCF-AD0DC5BCF6E9}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

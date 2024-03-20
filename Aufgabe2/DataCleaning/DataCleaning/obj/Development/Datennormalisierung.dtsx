@@ -1,0 +1,1516 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2024 7:05:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DBSERV4"
+  DTS:CreatorName="INFORMATIK\dwhprak10"
+  DTS:DTSID="{1870F07E-FFB0-4535-A144-9B53131731EE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{9B8DEE39-61DA-400C-A47F-64F361619AD6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_authors_institution_cleaned.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{47582CC8-0D61-488C-9BD6-E2CE5750360E}"
+      DTS:ObjectName="acm_authors_institution_cleaned.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_authors_institution_cleaned.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A0015B51-6E36-40D1-BD9A-9BED2F70E438}"
+      DTS:ObjectName="acm_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_author_clean.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6D408E43-A809-43EC-94F4-E52EA542A0D1}"
+      DTS:ObjectName="acm_author_clean.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_author_clean.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_author_institution.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{DC25E7D1-D696-473B-8CF3-AF589D2F6D55}"
+      DTS:ObjectName="acm_author_institution.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_author_institution.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_author_normal.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8CFBFF7C-9D5C-4D77-9BBF-B82FA4564063}"
+      DTS:ObjectName="acm_author_normal.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_author_normal.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CF30ADBA-BDA3-4025-B0E6-285D24962530}"
+      DTS:ObjectName="acm_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[add_self_cite.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{387EF699-0B0E-43F2-93D2-700E2AC8AE5A}"
+      DTS:ObjectName="add_self_cite.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\add_self_cite.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clean_institution.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7453DD08-D9A4-48EB-83D0-E237AB9D565D}"
+      DTS:ObjectName="clean_institution.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\clean_institution.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dblp_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{488E4B41-BC78-4106-90DA-75C720631202}"
+      DTS:ObjectName="dblp_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dblp_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{30EC99D2-3242-47CF-9989-6C0C5D731786}"
+      DTS:ObjectName="dblp_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dbpl_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CE0A4C23-E10E-425E-9865-EC27A76C6894}"
+      DTS:ObjectName="dbpl_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dbpl_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2FA76C97-BBD4-4AF3-8A17-80972CDCAB33}"
+      DTS:ObjectName="dbpl_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CAE7E27F-F2D6-4BAB-A1FD-B5B953460FA0}"
+      DTS:ObjectName="gs_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_publication.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{66DD6B83-BE8A-4932-B260-359CA26A172B}"
+      DTS:ObjectName="gs_publication.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_publication.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6BE0FDF4-22C9-44D8-AF8F-8FF1DF910D20}"
+      DTS:ObjectName="gs_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[match_schemas.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8FB3D1C4-07CB-4EAA-B3CA-26F996AD9FE4}"
+      DTS:ObjectName="match_schemas.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\match_schemas.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+      DTS:ObjectName="windorf.informatik.uni-leipzig.de.dwhprak09">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=windorf.informatik.uni-leipzig.de;Initial Catalog=dwhprak09;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ACM-Funktion clean_institution erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{fe101b2f-20ba-4a86-a50d-30d341215cf6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM-Funktion clean_institution erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="clean_institution.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{681abf7c-118a-4270-afff-9d9833621b9b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_author_institution.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\acm_Autoren und acm_Author_Publication einfügen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{FC150CBF-F1CE-43D6-AE76-C36CCE543DFD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="acm_Autoren und acm_Author_Publication einfügen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_author_normal.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\acm_Autoren_Institution_view erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{3223D72E-E4D8-45D5-AB61-74C9F808FE22}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="acm_Autoren_Institution_view erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_authors_institution_cleaned.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean ACM_Author-Tabelle erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{3665fb08-d051-4e7e-856c-b0f8eb6ada90}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean ACM_Author-Tabelle erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB87DE6E-B751-4184-8CF6-856566CFFEC6}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_author_clean.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fuzzygruppierung acm_Autor_Institution"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{D396736F-C2AC-4584-BEE1-91E044E049BA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fuzzygruppierung acm_Autor_Institution"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="acm_Autoren_Institution_Clustered"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_Author_Institution]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  connectionManagerRefId="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Author_ID]"
+                      cachedDataType="guid"
+                      cachedName="Author_ID"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Author_ID]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Vorname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vorname"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Familienname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Familienname"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Vorname_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vorname_clean"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname_Clean]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname_clean]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Familienname_clean]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Familienname_clean"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname_Clean]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname_clean]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_key_in]"
+                      cachedDataType="i4"
+                      cachedName="_key_in"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Key_In]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_key_out]"
+                      cachedDataType="i4"
+                      cachedName="_key_out"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Key_Out]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_score]"
+                      cachedDataType="r4"
+                      cachedName="_score"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Score]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Institution_Clean]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Institution_Clean"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_Institution]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution_Clean]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Vorname]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Vorname"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_fn]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Vorname]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Familienname]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Familienname"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_ln]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Familienname]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Institution_Clean_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution_Clean_clean"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution_Clean]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean_clean]" />
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].Columns[Institution_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution_Clean"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Author_ID]"
+                      dataType="guid"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vorname" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Familienname" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Key_In]"
+                      dataType="i4"
+                      name="Key_In" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Key_Out]"
+                      dataType="i4"
+                      name="Key_Out" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Score]"
+                      dataType="r8"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_Institution]"
+                      dataType="r8"
+                      name="sim_Institution" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_fn]"
+                      dataType="r8"
+                      name="sim_fn" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[sim_ln]"
+                      dataType="r8"
+                      name="sim_ln" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vorname_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname_Clean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Familienname_Clean" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="acm_Autoren_Institution_view sauber"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_authors_institution_cleaned]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  connectionManagerRefId="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Author_ID]"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      name="Author_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Vorname]"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      name="Vorname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Familienname]"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      name="Familienname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution]"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]"
+                      name="Institution"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution_Clean]"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]"
+                      name="Institution_Clean"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Author_ID]"
+                      dataType="guid"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vorname" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Familienname" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution" />
+                    <externalMetadataColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution_Clean" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      dataType="guid"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      name="Author_ID" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      name="Vorname" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      name="Familienname" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution]"
+                      name="Institution" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution_Clean]"
+                      name="Institution_Clean" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution"
+              componentClassID="Microsoft.FuzzyGrouping"
+              contactInfo="Fuzzygruppierung;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;3"
+              description="Erkennt mögliche doppelte Zeilen und unterstützt die Standardisierung der Daten durch Auswahl kanonischer Ersetzungen. Reduzieren Sie beispielsweise die Häufigkeit von Tippfehlern in einer Spalte &quot;company name&quot;, indem Sie einen Verweis auf eine genehmigte Liste von Firmennamen einfügen."
+              name="Fuzzygruppierung Institution"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Single"
+                  description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                  name="MinSimilarity">0.3</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Leerzeichen und Interpunktionszeichen an, die zum Trennen von Zeichenfolgen in mehrere Wörter verwendet werden."
+                  name="Delimiters"> 	
+,.;:-"'&amp;/\@!?()&lt;&gt;[]{}|#*^%</property>
+                <property
+                  dataType="System.Null"
+                  description="Gibt die maximale Arbeitsspeichermenge (in MB) an, die für die Transformation verwendet werden darf. Mit dem Wert 0 wird die Speicherauslastung basierend auf den Anforderungen und dem verfügbaren Systemarbeitsspeicher dynamisch verwendet."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, wird jeder Eingabedatensatz direkt mit JEDEM anderen Eingabedatensatz verglichen. Dies kann zu geringfügig besseren Ergebnissen führen, ist jedoch extrem langsam, außer bei sehr wenigen Eingabedatensätzen. Diese Option ist in erster Linie für das Debuggen gedacht und sollte mit Vorsicht verwendet werden."
+                  name="Exhaustive">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  connectionManagerRefId="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung]"
+                  name="Eingabe der Fuzzygruppierung">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung].Columns[Author_ID]"
+                      cachedDataType="guid"
+                      cachedName="Author_ID"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung].Columns[Vorname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vorname"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0.9</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">196611</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung].Columns[Familienname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Familienname"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0.9</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">196611</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung].Columns[Institution]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung].Columns[Institution_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution_Clean"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0.25</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">196611</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung]"
+                  name="Ausgabe der Fuzzygruppierung">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]"
+                      name="_key_in">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]"
+                      dataType="i4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]"
+                      name="_key_out">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]"
+                      dataType="r4"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]"
+                      name="_score">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]"
+                      dataType="guid"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]"
+                      name="Author_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]"
+                      name="Vorname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]"
+                      name="Familienname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution]"
+                      name="Institution">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean]"
+                      name="Institution_Clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname_clean]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname_clean]"
+                      name="Vorname_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname_clean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname_clean]"
+                      name="Familienname_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean_clean]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_Clean_clean]"
+                      name="Institution_Clean_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Vorname]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Vorname-Spalte."
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Vorname]"
+                      name="_Similarity_Vorname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Familienname]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Familienname-Spalte."
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Familienname]"
+                      name="_Similarity_Familienname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution_Clean]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Institution_Clean-Spalte."
+                      lineageId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution_Clean]"
+                      name="_Similarity_Institution_Clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fuzzygruppierung acm_Autor_Institution.Paths[Ausgabe der Fuzzygruppierung]"
+              endId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Ausgabe der Fuzzygruppierung"
+              startId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Outputs[Ausgabe der Fuzzygruppierung]" />
+            <path
+              refId="Package\Fuzzygruppierung acm_Autor_Institution.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution.Inputs[Eingabe der Fuzzygruppierung]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{16D46283-BC56-4B6A-B87C-04BF7625EEC5}"
+      DTS:From="Package\ACM-Funktion clean_institution erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\acm_Autoren_Institution_view erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{c7bd490f-a591-4a11-a4b8-a9443bff481b}"
+      DTS:From="Package\Clean ACM_Author-Tabelle erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 3"
+      DTS:To="Package\ACM-Tabelle für Fuzzy Grouping erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{6ba29363-9de6-4b71-8d1b-4c2479ce14af}"
+      DTS:From="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 4"
+      DTS:To="Package\ACM-Funktion clean_institution erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{FA301CC9-AD34-4932-8ED1-5E08E0787BFA}"
+      DTS:From="Package\acm_Autoren_Institution_view erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 7"
+      DTS:To="Package\Fuzzygruppierung acm_Autor_Institution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{B2DC41B2-60AC-4CE2-9172-D1C4A8E38AD6}"
+      DTS:From="Package\Fuzzygruppierung acm_Autor_Institution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 8"
+      DTS:To="Package\acm_Autoren und acm_Author_Publication einfügen" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="323,42"
+          Id="Package\acm_Autoren und acm_Author_Publication einfügen"
+          TopLeft="446,619" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\acm_Autoren_Institution_view erstellen"
+          TopLeft="476,450" />
+        <NodeLayout
+          Size="268,42"
+          Id="Package\ACM-Funktion clean_institution erstellen"
+          TopLeft="476,362.5" />
+        <NodeLayout
+          Size="273,55"
+          Id="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+          TopLeft="480,264.5" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Clean ACM_Author-Tabelle erstellen"
+          TopLeft="486,178.5" />
+        <NodeLayout
+          Size="270,42"
+          Id="Package\Fuzzygruppierung acm_Autor_Institution"
+          TopLeft="476,535" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 3]"
+          TopLeft="613.25,220.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 4]"
+          TopLeft="613.25,319.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 7]"
+          TopLeft="609.75,492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 8]"
+          TopLeft="609.25,577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="609.25,404.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5"
+              Start="0,0"
+              End="0,38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Fuzzygruppierung acm_Autor_Institution">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Fuzzygruppierung acm_Autor_Institution\Fuzzygruppierung Institution"
+          TopLeft="549,249" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber"
+          TopLeft="525,148" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered"
+          TopLeft="535,348" />
+        <EdgeLayout
+          Id="Package\Fuzzygruppierung acm_Autor_Institution.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="654.75,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fuzzygruppierung acm_Autor_Institution.Paths[Ausgabe der Fuzzygruppierung]"
+          TopLeft="656.75,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_view sauber">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fuzzygruppierung acm_Autor_Institution\acm_Autoren_Institution_Clustered">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

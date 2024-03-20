@@ -1,0 +1,2372 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2024 3:22:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DBSERV4"
+  DTS:CreatorName="INFORMATIK\dwhprak09"
+  DTS:DTSID="{1D622090-EACE-4C38-9C70-2DA16C81EFB3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{0965FEDF-8439-4D6F-B9E4-367013160139}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Datenflusstask"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{1279AEFD-5EC5-4AF4-9886-7A730387BBA5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datenflusstask"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Datenflusstask\Fuzzysuche"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzysuche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;5"
+              description="Führt Datenreinigungstasks wie die Standardisierung und Korrektur von Daten sowie die Bereitstellung fehlender Werte aus. Verwendet Fuzzyübereinstimmungen, um mindestens eine hohe Übereinstimmung aus einer Verweistabelle zurückzugeben. Suchen Sie beispielsweise Kundendaten nach Adresse, auch wenn Ihre Eingabeadresse den Verweisadressdaten nicht genau entspricht."
+              name="Fuzzysuche"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt an, ob eine vorhandene Indextabelle für Fuzzyübereinstimmung erneut verwendet oder eine neue erstellt werden soll. Die neue Indextabelle kann temporär, persistent oder persistent und verwaltet sein."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Gibt die maximale Arbeitsspeichermenge (in MB) an, die von dieser Instanz der Transformation für Fuzzysuche verwendet werden kann. Mit dem Wert 0 wird die Speicherauslastung basierend auf den Anforderungen und dem verfügbaren Systemarbeitsspeicher dynamisch verwendet."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Gibt den Namen der erneut zu verwendenden Indextabelle für Fuzzyübereinstimmung oder den Namen der Tabelle an, in die eine neu generierte Indextabelle für Fuzzyübereinstimmung geschrieben werden soll."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Verweistabelle oder Sicht an, der eingehende Datensätze zugeordnet werden sollen."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_acm_publication_view_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt an, ob eine vorhandene Indextabelle für Fuzzyübereinstimmung verworfen werden soll, wenn für die Transformation die Generierung einer neuen Tabelle konfiguriert und eine Tabelle mit gleichem Namen bereits vorhanden ist."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, ob eine Kopie der Verweistabelle für den Aufbau eines Indexes für Fuzzyübereinstimmung und die anschließende Zuordnung erstellt werden soll. Es wird dringend empfohlen, immer eine Kopie zu erstellen, anderenfalls können unvorhersehbare Ausgaben die Folge sein, wenn der Inhalt der Verweistabelle sich beim Paketausführen (oder zwischen den Ausführungen, wenn ein Index für Fuzzyübereinstimmung erneut verwendet wird) ändert. Wenn die Eigenschaft auf &quot;False&quot; festgelegt ist, muss die Verweistabelle außerdem einen gruppierten Index aufweisen, der auf einer ganzzahligen Identitätsspalte aufbaut."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Gibt die maximale Anzahl der Fuzzyübereinstimmungen an, die für einen Eingabedatensatz zurückgegeben werden."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Gibt das minimale Ähnlichkeitsergebnis an, das für die von der Transformation zurückgegebenen Entsprechungsergebnisse erforderlich ist."
+                  name="MinSimilarity">0.5</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Satz der Leerzeichen und Interpunktionszeichen an, der zum Trennen einzelner Fuzzyübereinstimmungsfelder in der für das Zuordnen und Bewerten einer Fuzzysuche verwendeten Wörter verwendet wird."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Metadaten der Verweistabelle im XML-Format an."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_id_x0022__x0020_dataType_x003D__x0022_DT_NUMERIC_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_20_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Titel_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_1000_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, wird jeder Eingabedatensatz direkt mit JEDEM Datensatz in der Verweistabelle verglichen. Dies kann zu geringfügig besseren Ergebnissen führen, ist jedoch extrem langsam, außer die Verweistabelle enthält sehr wenige Datensätze. Beachten Sie, dass bei aktivierter Option die gesamte Verweistabelle in den Hauptspeicher geladen wird. Diese Option ist in erster Linie für das Debuggen gedacht und sollte mit Vorsicht verwendet werden."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, lädt die Fuzzysuche den fehlertoleranten Index und die Verweistabelle vor Ausführungsbeginn teilweise in den Hauptspeicher. Dadurch kann die Leistung erheblich verbessert werden, falls viele Eingabezeilen verarbeitet werden müssen."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask\Fuzzysuche.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die Microsoft SQL Server-Verbindung und -Datenbank, in denen sich die Verweistabelle für die Fuzzysuche befindet und Speicherung der und Zugriff auf die Indextabelle für Fuzzyübereinstimmung erfolgen."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask\Fuzzysuche.Inputs[Eingabe der Fuzzysuche]"
+                  name="Eingabe der Fuzzysuche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Inputs[Eingabe der Fuzzysuche].Columns[id]"
+                      cachedDataType="i8"
+                      cachedName="id"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name der Verweistabellenspalte, der die Eingabespalte zugeordnet werden soll."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob es sich um eine genaue oder um eine Fuzzyübereinstimmung handelt."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt die mindestens erforderliche Textähnlichkeit zwischen Eingabedatensätzen und Datensätzen mit Fuzzyübereinstimmung für Werte in dieser Joinspalte an. Der Wert muss ein Gleitkommawert zwischen 0,0 und 1,0 sein."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an. Die Optionen entsprechen denen der FoldString-Funktion."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags zu &quot;FoldString&quot;, die beim Vergleich von zwei Zeichenfolgen auf Äquivalenz verwendet werden sollen."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Inputs[Eingabe der Fuzzysuche].Columns[Titel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Titel"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name der Verweistabellenspalte, der die Eingabespalte zugeordnet werden soll."
+                          name="JoinToReferenceColumn"
+                          state="escaped">Titel</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob es sich um eine genaue oder um eine Fuzzyübereinstimmung handelt."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt die mindestens erforderliche Textähnlichkeit zwischen Eingabedatensätzen und Datensätzen mit Fuzzyübereinstimmung für Werte in dieser Joinspalte an. Der Wert muss ein Gleitkommawert zwischen 0,0 und 1,0 sein."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an. Die Optionen entsprechen denen der FoldString-Funktion."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags zu &quot;FoldString&quot;, die beim Vergleich von zwei Zeichenfolgen auf Äquivalenz verwendet werden sollen."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche]"
+                  name="Ausgabe der Fuzzysuche">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]"
+                      dataType="i8"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]"
+                      name="Titel">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]"
+                      dataType="wstr"
+                      length="1000"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]"
+                      name="Titel (1)">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">Titel</property>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Titel-Spalte."
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]"
+                      name="_Similarity_Titel">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask\OLE DB-Quelle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="OLE DB-Quelle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[dblp_publication_view]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[id]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Titel]"
+                      length="500"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]"
+                      name="Titel"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Titel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[id]"
+                      dataType="i8"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Titel]"
+                      name="Titel" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[OLE DB-Ziel]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="i8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Titel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Titel"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Titel (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Titel (1)"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel (1)]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Confidence]"
+                      cachedDataType="r4"
+                      cachedName="_Confidence"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Confidence]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Titel]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Titel"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Titel]"
+                      lineageId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Titel" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel (1)]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Titel (1)" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity]"
+                      dataType="r4"
+                      name="_Similarity" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Confidence]"
+                      dataType="r4"
+                      name="_Confidence" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Titel]"
+                      dataType="r4"
+                      name="_Similarity_Titel" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Datenflusstask.Paths[Ausgabe der Fuzzysuche]"
+              endId="Package\Datenflusstask\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Ausgabe der Fuzzysuche"
+              startId="Package\Datenflusstask\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche]" />
+            <path
+              refId="Package\Datenflusstask.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Datenflusstask\Fuzzysuche.Inputs[Eingabe der Fuzzysuche]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Datenflusstask 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{F3C94FAB-9036-41FB-8A6D-9906CB5987CA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datenflusstask 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Datenflusstask 1\Fuzzysuche"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzysuche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;5"
+              description="Führt Datenreinigungstasks wie die Standardisierung und Korrektur von Daten sowie die Bereitstellung fehlender Werte aus. Verwendet Fuzzyübereinstimmungen, um mindestens eine hohe Übereinstimmung aus einer Verweistabelle zurückzugeben. Suchen Sie beispielsweise Kundendaten nach Adresse, auch wenn Ihre Eingabeadresse den Verweisadressdaten nicht genau entspricht."
+              name="Fuzzysuche"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt an, ob eine vorhandene Indextabelle für Fuzzyübereinstimmung erneut verwendet oder eine neue erstellt werden soll. Die neue Indextabelle kann temporär, persistent oder persistent und verwaltet sein."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Gibt die maximale Arbeitsspeichermenge (in MB) an, die von dieser Instanz der Transformation für Fuzzysuche verwendet werden kann. Mit dem Wert 0 wird die Speicherauslastung basierend auf den Anforderungen und dem verfügbaren Systemarbeitsspeicher dynamisch verwendet."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Gibt den Namen der erneut zu verwendenden Indextabelle für Fuzzyübereinstimmung oder den Namen der Tabelle an, in die eine neu generierte Indextabelle für Fuzzyübereinstimmung geschrieben werden soll."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Verweistabelle oder Sicht an, der eingehende Datensätze zugeordnet werden sollen."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_gs_publication_view_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt an, ob eine vorhandene Indextabelle für Fuzzyübereinstimmung verworfen werden soll, wenn für die Transformation die Generierung einer neuen Tabelle konfiguriert und eine Tabelle mit gleichem Namen bereits vorhanden ist."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, ob eine Kopie der Verweistabelle für den Aufbau eines Indexes für Fuzzyübereinstimmung und die anschließende Zuordnung erstellt werden soll. Es wird dringend empfohlen, immer eine Kopie zu erstellen, anderenfalls können unvorhersehbare Ausgaben die Folge sein, wenn der Inhalt der Verweistabelle sich beim Paketausführen (oder zwischen den Ausführungen, wenn ein Index für Fuzzyübereinstimmung erneut verwendet wird) ändert. Wenn die Eigenschaft auf &quot;False&quot; festgelegt ist, muss die Verweistabelle außerdem einen gruppierten Index aufweisen, der auf einer ganzzahligen Identitätsspalte aufbaut."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Gibt die maximale Anzahl der Fuzzyübereinstimmungen an, die für einen Eingabedatensatz zurückgegeben werden."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Gibt das minimale Ähnlichkeitsergebnis an, das für die von der Transformation zurückgegebenen Entsprechungsergebnisse erforderlich ist."
+                  name="MinSimilarity">0.5</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Satz der Leerzeichen und Interpunktionszeichen an, der zum Trennen einzelner Fuzzyübereinstimmungsfelder in der für das Zuordnen und Bewerten einer Fuzzysuche verwendeten Wörter verwendet wird."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Metadaten der Verweistabelle im XML-Format an."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_id_x0022__x0020_dataType_x003D__x0022_DT_NUMERIC_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_20_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Titel_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_1000_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, wird jeder Eingabedatensatz direkt mit JEDEM Datensatz in der Verweistabelle verglichen. Dies kann zu geringfügig besseren Ergebnissen führen, ist jedoch extrem langsam, außer die Verweistabelle enthält sehr wenige Datensätze. Beachten Sie, dass bei aktivierter Option die gesamte Verweistabelle in den Hauptspeicher geladen wird. Diese Option ist in erster Linie für das Debuggen gedacht und sollte mit Vorsicht verwendet werden."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, lädt die Fuzzysuche den fehlertoleranten Index und die Verweistabelle vor Ausführungsbeginn teilweise in den Hauptspeicher. Dadurch kann die Leistung erheblich verbessert werden, falls viele Eingabezeilen verarbeitet werden müssen."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 1\Fuzzysuche.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die Microsoft SQL Server-Verbindung und -Datenbank, in denen sich die Verweistabelle für die Fuzzysuche befindet und Speicherung der und Zugriff auf die Indextabelle für Fuzzyübereinstimmung erfolgen."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask 1\Fuzzysuche.Inputs[Eingabe der Fuzzysuche]"
+                  name="Eingabe der Fuzzysuche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Inputs[Eingabe der Fuzzysuche].Columns[id]"
+                      cachedDataType="i8"
+                      cachedName="id"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name der Verweistabellenspalte, der die Eingabespalte zugeordnet werden soll."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob es sich um eine genaue oder um eine Fuzzyübereinstimmung handelt."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt die mindestens erforderliche Textähnlichkeit zwischen Eingabedatensätzen und Datensätzen mit Fuzzyübereinstimmung für Werte in dieser Joinspalte an. Der Wert muss ein Gleitkommawert zwischen 0,0 und 1,0 sein."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an. Die Optionen entsprechen denen der FoldString-Funktion."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags zu &quot;FoldString&quot;, die beim Vergleich von zwei Zeichenfolgen auf Äquivalenz verwendet werden sollen."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Inputs[Eingabe der Fuzzysuche].Columns[Titel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Titel"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name der Verweistabellenspalte, der die Eingabespalte zugeordnet werden soll."
+                          name="JoinToReferenceColumn"
+                          state="escaped">Titel</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob es sich um eine genaue oder um eine Fuzzyübereinstimmung handelt."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt die mindestens erforderliche Textähnlichkeit zwischen Eingabedatensätzen und Datensätzen mit Fuzzyübereinstimmung für Werte in dieser Joinspalte an. Der Wert muss ein Gleitkommawert zwischen 0,0 und 1,0 sein."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an. Die Optionen entsprechen denen der FoldString-Funktion."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags zu &quot;FoldString&quot;, die beim Vergleich von zwei Zeichenfolgen auf Äquivalenz verwendet werden sollen."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche]"
+                  name="Ausgabe der Fuzzysuche">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]"
+                      dataType="i8"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]"
+                      name="Titel">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]"
+                      dataType="wstr"
+                      length="1000"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]"
+                      name="Titel (1)">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">Titel</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Null"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Titel-Spalte."
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]"
+                      name="_Similarity_Titel">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte der Verweistabelle an, die für jedes Übereinstimmungsergebnis in die Ausgabe kopiert wird."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, aus der für jede Übereinstimmung in die Ausgabespalte kopiert werden soll."
+                          name="SourceInputColumnLineageID">#{Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob die Spalte für das Anzeigen von Vertrauen oder Ähnlichkeit verwendet wird."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask 1\OLE DB-Quelle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="OLE DB-Quelle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[dblp_publication_view]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 1\OLE DB-Quelle.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[id]"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Titel]"
+                      length="500"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Titel]"
+                      name="Titel"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Titel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[id]"
+                      dataType="i8"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Titel]"
+                      name="Titel" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask 1\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dblp-gs]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 1\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="i8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Titel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Titel"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Titel (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Titel (1)"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel (1)]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[Titel (1)]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Confidence]"
+                      cachedDataType="r4"
+                      cachedName="_Confidence"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Confidence]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Confidence]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Titel]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Titel"
+                      externalMetadataColumnId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Titel]"
+                      lineageId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche].Columns[_Similarity_Titel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Titel" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel (1)]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Titel (1)" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity]"
+                      dataType="r4"
+                      name="_Similarity" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Confidence]"
+                      dataType="r4"
+                      name="_Confidence" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Titel]"
+                      dataType="r4"
+                      name="_Similarity_Titel" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 1\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 1\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 1\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Datenflusstask 1.Paths[Ausgabe der Fuzzysuche]"
+              endId="Package\Datenflusstask 1\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Ausgabe der Fuzzysuche"
+              startId="Package\Datenflusstask 1\Fuzzysuche.Outputs[Ausgabe der Fuzzysuche]" />
+            <path
+              refId="Package\Datenflusstask 1.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Datenflusstask 1\Fuzzysuche.Inputs[Eingabe der Fuzzysuche]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Datenflusstask 1\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Datenflusstask 2"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{A34DEB84-7179-47F1-A835-2FF3FC4D7080}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datenflusstask 2"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Datenflusstask 2\Fuzzygruppierung"
+              componentClassID="Microsoft.FuzzyGrouping"
+              contactInfo="Fuzzygruppierung;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;3"
+              description="Erkennt mögliche doppelte Zeilen und unterstützt die Standardisierung der Daten durch Auswahl kanonischer Ersetzungen. Reduzieren Sie beispielsweise die Häufigkeit von Tippfehlern in einer Spalte &quot;company name&quot;, indem Sie einen Verweis auf eine genehmigte Liste von Firmennamen einfügen."
+              name="Fuzzygruppierung"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Single"
+                  description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                  name="MinSimilarity">0.8</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Leerzeichen und Interpunktionszeichen an, die zum Trennen von Zeichenfolgen in mehrere Wörter verwendet werden."
+                  name="Delimiters"> 	
+,.;:-"'&amp;/\@!?()&lt;&gt;[]{}|#*^%</property>
+                <property
+                  dataType="System.Null"
+                  description="Gibt die maximale Arbeitsspeichermenge (in MB) an, die für die Transformation verwendet werden darf. Mit dem Wert 0 wird die Speicherauslastung basierend auf den Anforderungen und dem verfügbaren Systemarbeitsspeicher dynamisch verwendet."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Boolean"
+                  description="Falls &quot;True&quot;, wird jeder Eingabedatensatz direkt mit JEDEM anderen Eingabedatensatz verglichen. Dies kann zu geringfügig besseren Ergebnissen führen, ist jedoch extrem langsam, außer bei sehr wenigen Eingabedatensätzen. Diese Option ist in erster Linie für das Debuggen gedacht und sollte mit Vorsicht verwendet werden."
+                  name="Exhaustive">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 2\Fuzzygruppierung.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung]"
+                  name="Eingabe der Fuzzygruppierung">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung].Columns[Author_ID]"
+                      cachedDataType="guid"
+                      cachedName="Author_ID"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung].Columns[Vorname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vorname"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung].Columns[Familienname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Familienname"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung].Columns[Institution]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen &quot;0&quot; und &quot;1&quot; an."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">196611</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung]"
+                  name="Ausgabe der Fuzzygruppierung">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]"
+                      name="_key_in">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]"
+                      name="_key_out">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]"
+                      dataType="r4"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]"
+                      name="_score">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]"
+                      dataType="guid"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]"
+                      name="Author_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]"
+                      name="Vorname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]"
+                      name="Familienname">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution]"
+                      name="Institution">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_clean]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_clean]"
+                      name="Institution_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution]"
+                      dataType="r4"
+                      description="Ähnlichkeitsergebnis auf Spaltenebene für den Fuzzyjoin für die Institution-Spalte."
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution]"
+                      name="_Similarity_Institution">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt den Spaltentyp an. Die gültigen Werte sind &quot;Canonical&quot;, &quot;ColumnSimilarity&quot;, &quot;KeyIn&quot;, &quot;KeyOut&quot;, &quot;PassThru&quot;, &quot;Similarity&quot; und &quot;Undefined&quot;."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein."
+                          name="InputId">#{Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask 2\OLE DB-Quelle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="OLE DB-Quelle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_Author]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 2\OLE DB-Quelle.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Author_ID]"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      name="Author_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Vorname]"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      name="Vorname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Familienname]"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      name="Familienname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution]"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Institution]"
+                      name="Institution"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Author_ID]"
+                      dataType="guid"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vorname" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Familienname" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      dataType="guid"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Author_ID]"
+                      name="Author_ID" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Vorname]"
+                      name="Vorname" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Familienname]"
+                      name="Familienname" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Institution]"
+                      name="Institution" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask 2\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[Gruppierung]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask 2\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_key_in]"
+                      cachedDataType="i4"
+                      cachedName="_key_in"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_key_in]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_in]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_key_out]"
+                      cachedDataType="i4"
+                      cachedName="_key_out"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_key_out]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_key_out]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_score]"
+                      cachedDataType="r4"
+                      cachedName="_score"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_score]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_score]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Author_ID]"
+                      cachedDataType="guid"
+                      cachedName="Author_ID"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Author_ID]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Author_ID]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Vorname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vorname"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Vorname]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Familienname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Familienname"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Familienname]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Institution]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[Institution_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution_clean"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution_clean]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[Institution_clean]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[_Similarity_Institution]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Institution"
+                      externalMetadataColumnId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Institution]"
+                      lineageId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung].Columns[_Similarity_Institution]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_key_in]"
+                      dataType="i4"
+                      name="_key_in" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_key_out]"
+                      dataType="i4"
+                      name="_key_out" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_score]"
+                      dataType="r4"
+                      name="_score" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Author_ID]"
+                      dataType="guid"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Vorname]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vorname" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Familienname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Familienname" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution_clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution_clean" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[_Similarity_Institution]"
+                      dataType="r4"
+                      name="_Similarity_Institution" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask 2\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask 2\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask 2\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Datenflusstask 2.Paths[Ausgabe der Fuzzygruppierung]"
+              endId="Package\Datenflusstask 2\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Ausgabe der Fuzzygruppierung"
+              startId="Package\Datenflusstask 2\Fuzzygruppierung.Outputs[Ausgabe der Fuzzygruppierung]" />
+            <path
+              refId="Package\Datenflusstask 2.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Datenflusstask 2\Fuzzygruppierung.Inputs[Eingabe der Fuzzygruppierung]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Datenflusstask 2\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Datenflusstask"
+          TopLeft="215,85" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Datenflusstask 1"
+          TopLeft="209,162" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Datenflusstask 2"
+          TopLeft="479,105" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Datenflusstask">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Datenflusstask\OLE DB-Quelle"
+          TopLeft="184,66" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Datenflusstask\Fuzzysuche"
+          TopLeft="327,135" />
+        <EdgeLayout
+          Id="Package\Datenflusstask.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="258,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135,27"
+              Start="0,0"
+              End="135,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="131,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131,13.5"
+                    Point2="135,13.5"
+                    Point3="135,17.5" />
+                  <mssgle:LineSegment
+                    End="135,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Datenflusstask\OLE DB-Ziel"
+          TopLeft="333,205" />
+        <EdgeLayout
+          Id="Package\Datenflusstask.Paths[Ausgabe der Fuzzysuche]"
+          TopLeft="396.75,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask\OLE DB-Quelle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask\Fuzzysuche">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Datenflusstask 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Datenflusstask 1\OLE DB-Quelle"
+          TopLeft="398,146" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Datenflusstask 1\Fuzzysuche"
+          TopLeft="437,289" />
+        <EdgeLayout
+          Id="Package\Datenflusstask 1.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="472,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,101"
+              Start="0,0"
+              End="31,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.5"
+                    Point2="0,50.5"
+                    Point3="4,50.5" />
+                  <mssgle:LineSegment
+                    End="27,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,50.5"
+                    Point2="31,50.5"
+                    Point3="31,54.5" />
+                  <mssgle:LineSegment
+                    End="31,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Datenflusstask 1\OLE DB-Ziel"
+          TopLeft="501,458" />
+        <EdgeLayout
+          Id="Package\Datenflusstask 1.Paths[Ausgabe der Fuzzysuche]"
+          TopLeft="503,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.5,127"
+              Start="0,0"
+              End="65.5,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.5"
+                    Point2="0,63.5"
+                    Point3="4,63.5" />
+                  <mssgle:LineSegment
+                    End="61.5,63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.5,63.5"
+                    Point2="65.5,63.5"
+                    Point3="65.5,67.5" />
+                  <mssgle:LineSegment
+                    End="65.5,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask 1\OLE DB-Quelle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask 1\Fuzzysuche">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask 1\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Datenflusstask 2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Datenflusstask 2\OLE DB-Quelle"
+          TopLeft="343,80" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Datenflusstask 2\Fuzzygruppierung"
+          TopLeft="420,231" />
+        <EdgeLayout
+          Id="Package\Datenflusstask 2.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="417,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,109"
+              Start="0,0"
+              End="84,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
+                  <mssgle:LineSegment
+                    End="80,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80,54.5"
+                    Point2="84,54.5"
+                    Point3="84,58.5" />
+                  <mssgle:LineSegment
+                    End="84,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Datenflusstask 2\OLE DB-Ziel"
+          TopLeft="516,336" />
+        <EdgeLayout
+          Id="Package\Datenflusstask 2.Paths[Ausgabe der Fuzzygruppierung]"
+          TopLeft="501,273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.5,63"
+              Start="0,0"
+              End="82.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="78.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.5,31.5"
+                    Point2="82.5,31.5"
+                    Point3="82.5,35.5" />
+                  <mssgle:LineSegment
+                    End="82.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask 2\OLE DB-Quelle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask 2\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

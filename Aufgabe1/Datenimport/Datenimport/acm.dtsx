@@ -1,0 +1,2321 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/10/2023 2:45:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DBSERV4"
+  DTS:CreatorName="INFORMATIK\dwhprak10"
+  DTS:DTSID="{B1814EFD-C570-4191-A03B-ECF519F749E7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{79C03C3E-972D-46ED-96B8-C7B1BB4961A9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_normal.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{ED288F7B-95C3-4D46-999F-74F0570068B8}"
+      DTS:ObjectName="acm_normal.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_normal.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_normal.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{686C4B77-994B-4942-B56D-C1623A117F36}"
+      DTS:ObjectName="acm_normal.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_normal.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_schema.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{47366ABF-B8F1-43D7-B13B-A416898C6590}"
+      DTS:ObjectName="acm_schema.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_schema.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_schema.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D63A1688-2F18-4827-96C0-BFD44D273959}"
+      DTS:ObjectName="acm_schema.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_schema.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_schema_raw.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CBEF80B3-4FD7-441C-8384-7164344A8837}"
+      DTS:ObjectName="acm_schema_raw.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_schema_raw.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_schema_raw.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{050D24B0-3E82-4A19-8445-BDCF5FE383BA}"
+      DTS:ObjectName="acm_schema_raw.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\acm_schema_raw.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[truncate_tables.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{10D96635-FFD6-4AD8-8A0F-C233BA65D4DF}"
+      DTS:ObjectName="truncate_tables.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\truncate_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[truncate_tables.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9928E8F2-5EA5-41FD-A691-21CB65F761BD}"
+      DTS:ObjectName="truncate_tables.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\truncate_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ACM"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequenzcontainer"
+      DTS:DTSID="{2445B747-F8EF-45E6-B77D-BA1E20E25D69}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ACM\ACM erstellen"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{5E37AD20-4C99-408D-B58D-FFDA46932174}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ACM erstellen"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="acm_schema.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ACM\ACM_1 erstellen"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{69B011CF-68B4-4FC7-84B2-1471E95DCFAE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ACM_1 erstellen"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="acm_schema_raw.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ACM importieren"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{FB4223F7-EBDF-4E0C-92AD-FA1543B511FC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM importieren">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ACM importieren\Author"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="Author"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_Author_raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ACM importieren\Author.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].Columns[Institution]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Institution"
+                      externalMetadataColumnId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Institution]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].Columns[pos]"
+                      cachedDataType="ui1"
+                      cachedName="pos"
+                      externalMetadataColumnId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[pos]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[pos]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Name]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].Columns[Publication_Id]"
+                      cachedDataType="ui8"
+                      cachedName="Publication_Id"
+                      externalMetadataColumnId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Publication_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[pos]"
+                      dataType="ui1"
+                      name="pos" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      dataType="numeric"
+                      name="Publication_Id"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\Author.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\Author.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Author.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\Author.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Author.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ACM importieren\CitingPub"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="CitingPub"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_CitingPub_raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ACM importieren\CitingPub.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="ui4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[id]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].Columns[text]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="text"
+                      externalMetadataColumnId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[text]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].Columns[Publication_Id]"
+                      cachedDataType="ui8"
+                      cachedName="Publication_Id"
+                      externalMetadataColumnId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[Publication_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="4000"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      dataType="numeric"
+                      name="Publication_Id"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\CitingPub.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\CitingPub.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\CitingPub.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\CitingPub.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\CitingPub.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ACM importieren\Publication"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="Publication"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_Publication_raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ACM importieren\Publication.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[Publication_Id]"
+                      cachedDataType="ui8"
+                      cachedName="Publication_Id"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Publication_Id]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="ui4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[id]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Title]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[Fulltext]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fulltext"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Fulltext]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Fulltext]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[StartPage]"
+                      cachedDataType="ui2"
+                      cachedName="StartPage"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StartPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[StartPage]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[EndPage]"
+                      cachedDataType="ui2"
+                      cachedName="EndPage"
+                      externalMetadataColumnId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[EndPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[EndPage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      dataType="numeric"
+                      name="Publication_Id"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Fulltext]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fulltext" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[StartPage]"
+                      dataType="i4"
+                      name="StartPage" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[EndPage]"
+                      dataType="i4"
+                      name="EndPage" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ACM importieren\Venue"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="Venue"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_Venue_raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ACM importieren\Venue.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="ui4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[id]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].Columns[year]"
+                      cachedDataType="ui2"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[year]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[year]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].Columns[text]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="text"
+                      externalMetadataColumnId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[text]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].Columns[Publication_Id]"
+                      cachedDataType="ui8"
+                      cachedName="Publication_Id"
+                      externalMetadataColumnId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[Publication_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="255"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      dataType="numeric"
+                      name="Publication_Id"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\Venue.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\Venue.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Venue.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\Venue.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\Venue.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ACM importieren\VenueSeries"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="VenueSeries"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[acm_VenueSeries_raw]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ACM importieren\VenueSeries.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[id]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].Columns[text]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="text"
+                      externalMetadataColumnId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[text]" />
+                    <inputColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].Columns[Publication_Id]"
+                      cachedDataType="ui8"
+                      cachedName="Publication_Id"
+                      externalMetadataColumnId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[Publication_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="255"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_Id]"
+                      dataType="numeric"
+                      name="Publication_Id"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\VenueSeries.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\VenueSeries.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\VenueSeries.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\VenueSeries.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\VenueSeries.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ACM importieren\XML-Quelle"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrahiert Daten aus einer XML-Datei. Extrahieren Sie beispielsweise Katalogdaten aus einer XML-Datei, die Kataloge und Katalogelemente darstellt. Geben Sie vor der Verwendung das Schema an, und generieren Sie eine Ausgabe für jedes XML-Element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;2"
+              description="Extrahiert Daten aus einer XML-Datei. Extrahieren Sie beispielsweise Katalogdaten aus einer XML-Datei, die Kataloge und Katalogelemente darstellt. Geben Sie vor der Verwendung das Schema an, und generieren Sie eine Ausgabe für jedes XML-Element."
+              name="XML-Quelle"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter verwendeten XML-Daten."
+                  expressionType="Notify"
+                  name="XMLData">\\informatik\pools\public\dwhprak\data\acm\ACM.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter zum Angeben von XML-Daten verwendete Variable."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Definiert, wie der XML-Quelladapter XML-Daten abruft."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter verwendete XML-Schemadefinition."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">\\informatik\pools\public\dwhprak\data\acm\ACM.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifiziert, ob ein Inlineschema verwendet wird."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Definiert, wie XML-Ganzzahltypen zugeordnet werden."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Venue]"
+                  name="Venue">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Venue</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[id]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[year]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[year]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[text]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[text]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[text]"
+                      name="text"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[Publication_Id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue].Columns[Publication_Id]"
+                      name="Publication_Id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[id]"
+                      dataType="ui4"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[year]"
+                      dataType="ui2"
+                      name="year">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="255"
+                      name="text">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue].ExternalColumns[Publication_Id]"
+                      dataType="ui8"
+                      name="Publication_Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="Venue-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Venue</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[year]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[year]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[text]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[text]"
+                      name="text" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[Publication_Id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[Publication_Id]"
+                      name="Publication_Id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[year]"
+                      dataType="nText"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[text]"
+                      dataType="nText"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Venue-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      dataType="nText"
+                      name="Publication_Id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries]"
+                  name="VenueSeries">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">VenueSeries</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[text]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[text]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[text]"
+                      name="text"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[Publication_Id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].Columns[Publication_Id]"
+                      name="Publication_Id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="255"
+                      name="text">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries].ExternalColumns[Publication_Id]"
+                      dataType="ui8"
+                      name="Publication_Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="VenueSeries-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">VenueSeries</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[text]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[text]"
+                      name="text" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[Publication_Id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[Publication_Id]"
+                      name="Publication_Id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[text]"
+                      dataType="nText"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      dataType="nText"
+                      name="Publication_Id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Author]"
+                  name="Author">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Author</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[pos]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[pos]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[pos]"
+                      name="pos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Institution]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Institution]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Institution]"
+                      name="Institution"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Publication_Id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author].Columns[Publication_Id]"
+                      name="Publication_Id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[pos]"
+                      dataType="ui1"
+                      name="pos">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.Byte</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Institution]"
+                      dataType="wstr"
+                      length="255"
+                      name="Institution">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author].ExternalColumns[Publication_Id]"
+                      dataType="ui8"
+                      name="Publication_Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="Author-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Author</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[pos]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[pos]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[pos]"
+                      name="pos" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Name]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Name]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Institution]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Institution]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Institution]"
+                      name="Institution" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Publication_Id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[Publication_Id]"
+                      name="Publication_Id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[pos]"
+                      dataType="nText"
+                      name="pos" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Name]"
+                      dataType="nText"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Institution]"
+                      dataType="nText"
+                      name="Institution" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Author-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      dataType="nText"
+                      name="Publication_Id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub]"
+                  name="CitingPub">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">CitingPub</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[id]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[text]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[text]"
+                      length="4000"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[text]"
+                      name="text"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[Publication_Id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].Columns[Publication_Id]"
+                      name="Publication_Id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[id]"
+                      dataType="ui4"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[text]"
+                      dataType="wstr"
+                      length="255"
+                      name="text">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub].ExternalColumns[Publication_Id]"
+                      dataType="ui8"
+                      name="Publication_Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="CitingPub-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">CitingPub</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[text]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[text]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[text]"
+                      name="text" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[Publication_Id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[Publication_Id]"
+                      name="Publication_Id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[text]"
+                      dataType="nText"
+                      name="text" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      dataType="nText"
+                      name="Publication_Id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Publication]"
+                  name="Publication">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Publication</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Publication_Id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Publication_Id]"
+                      name="Publication_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[id]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Title]"
+                      length="1000"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Fulltext]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Fulltext]"
+                      length="255"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[Fulltext]"
+                      name="Fulltext"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[StartPage]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[StartPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[StartPage]"
+                      name="StartPage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[EndPage]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[EndPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication].Columns[EndPage]"
+                      name="EndPage"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Publication_Id]"
+                      dataType="ui8"
+                      name="Publication_Id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[id]"
+                      dataType="ui4"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[Fulltext]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fulltext">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[StartPage]"
+                      dataType="ui2"
+                      name="StartPage">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication].ExternalColumns[EndPage]"
+                      dataType="ui2"
+                      name="EndPage">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="Publication-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Publication</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Publication_Id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Publication_Id]"
+                      name="Publication_Id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[id]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Title]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Title]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Fulltext]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Fulltext]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[Fulltext]"
+                      name="Fulltext" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[StartPage]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[StartPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[StartPage]"
+                      name="StartPage" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[EndPage]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[EndPage]"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[EndPage]"
+                      name="EndPage" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Publication_Id]"
+                      dataType="nText"
+                      name="Publication_Id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Title]"
+                      dataType="nText"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[Fulltext]"
+                      dataType="nText"
+                      name="Fulltext" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[StartPage]"
+                      dataType="nText"
+                      name="StartPage" />
+                    <externalMetadataColumn
+                      refId="Package\ACM importieren\XML-Quelle.Outputs[Publication-Fehlerausgabe].ExternalColumns[EndPage]"
+                      dataType="nText"
+                      name="EndPage" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ACM importieren.Paths[Author]"
+              endId="Package\ACM importieren\Author.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Author"
+              startId="Package\ACM importieren\XML-Quelle.Outputs[Author]" />
+            <path
+              refId="Package\ACM importieren.Paths[CitingPub]"
+              endId="Package\ACM importieren\CitingPub.Inputs[Eingabe des OLE DB-Ziels]"
+              name="CitingPub"
+              startId="Package\ACM importieren\XML-Quelle.Outputs[CitingPub]" />
+            <path
+              refId="Package\ACM importieren.Paths[Publication]"
+              endId="Package\ACM importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Publication"
+              startId="Package\ACM importieren\XML-Quelle.Outputs[Publication]" />
+            <path
+              refId="Package\ACM importieren.Paths[Venue]"
+              endId="Package\ACM importieren\Venue.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Venue"
+              startId="Package\ACM importieren\XML-Quelle.Outputs[Venue]" />
+            <path
+              refId="Package\ACM importieren.Paths[VenueSeries]"
+              endId="Package\ACM importieren\VenueSeries.Inputs[Eingabe des OLE DB-Ziels]"
+              name="VenueSeries"
+              startId="Package\ACM importieren\XML-Quelle.Outputs[VenueSeries]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ACM normalisieren"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{0856246F-5902-48CC-BAD8-45B15445EA16}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM normalisieren"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_normal.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Task &quot;Paket ausführen&quot;"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Task &quot;Paket ausführen&quot;"
+      DTS:Disabled="True"
+      DTS:DTSID="{8790114A-F4E9-46C0-AEDE-60B989189377}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Task &quot;Paket ausführen&quot;"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>gs.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{96652503-26DB-49D4-AD21-187FD4C1068F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="truncate_tables.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{00DDCF17-6A48-400E-B946-3193EDF6DD3B}"
+      DTS:From="Package\ACM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\Truncate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{54203C74-B0D0-4802-A9B2-CB30E11AAF80}"
+      DTS:From="Package\Truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 1"
+      DTS:To="Package\ACM importieren" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0BC86F8-C5D8-4B48-A73C-8D6B479527D8}"
+      DTS:From="Package\ACM importieren"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 2"
+      DTS:To="Package\ACM normalisieren" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{3AF7A827-5389-4FEE-B5BE-51B6D5B433E6}"
+      DTS:From="Package\ACM normalisieren"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 3"
+      DTS:To="Package\Task &quot;Paket ausführen&quot;" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\ACM\ACM erstellen"
+          TopLeft="76,26" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\ACM\ACM_1 erstellen"
+          TopLeft="339,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="580,123"
+          Size="580,166"
+          Id="Package\ACM"
+          TopLeft="230,44" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\ACM importieren"
+          TopLeft="445.5,339.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\ACM normalisieren"
+          TopLeft="438,399" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Task &quot;Paket ausführen&quot;"
+          TopLeft="128,352" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Truncate"
+          TopLeft="453,262" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="516.75,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="513.5,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,35.5"
+              Start="0,0"
+              End="10.5,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.75"
+                    Point2="0,17.75"
+                    Point3="4,17.75" />
+                  <mssgle:LineSegment
+                    End="6.5,17.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,17.75"
+                    Point2="10.5,17.75"
+                    Point3="10.5,21.75" />
+                  <mssgle:LineSegment
+                    End="10.5,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="602.5,360.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2.5,59.5"
+              Start="0,0"
+              End="10,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21,0"
+                    Point2="25,0"
+                    Point3="25,4" />
+                  <mssgle:LineSegment
+                    End="25,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,55.5"
+                    Point2="25,59.5"
+                    Point3="21,59.5" />
+                  <mssgle:LineSegment
+                    End="10,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 3]"
+          TopLeft="438,420">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121,-47"
+              Start="0,0"
+              End="-113.5,-47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-56.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.5,0"
+                    Point2="-60.5,0"
+                    Point3="-60.5,-4" />
+                  <mssgle:LineSegment
+                    End="-60.5,-43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.5,-43"
+                    Point2="-60.5,-47"
+                    Point3="-64.5,-47" />
+                  <mssgle:LineSegment
+                    End="-113.5,-47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ACM importieren">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\ACM importieren\Publication"
+          TopLeft="310,275" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\ACM importieren\Venue"
+          TopLeft="487,276" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\ACM importieren\CitingPub"
+          TopLeft="160,269" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\ACM importieren\XML-Quelle"
+          TopLeft="252,57" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\ACM importieren\VenueSeries"
+          TopLeft="609,278" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\ACM importieren\Author"
+          TopLeft="19,268" />
+        <EdgeLayout
+          Id="Package\ACM importieren.Paths[VenueSeries]"
+          TopLeft="359.333333333333,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="318.166666666667,179"
+              Start="0,0"
+              End="318.166666666667,171.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.6985294117646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.6985294117646"
+                    Point2="0,48.6985294117646"
+                    Point3="4,48.6985294117646" />
+                  <mssgle:LineSegment
+                    End="314.166666666667,48.6985294117646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="314.166666666667,48.6985294117646"
+                    Point2="318.166666666667,48.6985294117646"
+                    Point3="318.166666666667,52.6985294117646" />
+                  <mssgle:LineSegment
+                    End="318.166666666667,171.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="131.112571614584,53.6985294117646,55.9415234375,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ACM importieren.Paths[Venue]"
+          TopLeft="338.666666666667,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202.333333333333,177"
+              Start="0,0"
+              End="202.333333333333,169.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.0718562874252" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.0718562874252"
+                    Point2="0,72.0718562874252"
+                    Point3="4,72.0718562874252" />
+                  <mssgle:LineSegment
+                    End="198.333333333333,72.0718562874252" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.333333333333,72.0718562874252"
+                    Point2="202.333333333333,72.0718562874252"
+                    Point3="202.333333333333,76.0718562874252" />
+                  <mssgle:LineSegment
+                    End="202.333333333333,169.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="86.4521354166665,77.0718562874252,29.4290625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ACM importieren.Paths[Publication]"
+          TopLeft="318,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,176"
+              Start="0,0"
+              End="57,168.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,84"
+                    Point2="0,88"
+                    Point3="4,88" />
+                  <mssgle:LineSegment
+                    End="53,88" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,88"
+                    Point2="57,88"
+                    Point3="57,92" />
+                  <mssgle:LineSegment
+                    End="57,168.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.33306640625,93,48.3338671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ACM importieren.Paths[CitingPub]"
+          TopLeft="297.333333333333,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-75.8333333333333,170"
+              Start="0,0"
+              End="-75.8333333333333,162.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.2215568862275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.2215568862275"
+                    Point2="0,69.2215568862275"
+                    Point3="-4,69.2215568862275" />
+                  <mssgle:LineSegment
+                    End="-71.8333333333333,69.2215568862275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.8333333333333,69.2215568862275"
+                    Point2="-75.8333333333333,69.2215568862275"
+                    Point3="-75.8333333333333,73.2215568862275" />
+                  <mssgle:LineSegment
+                    End="-75.8333333333333,162.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-59.4401627604167,74.2215568862275,43.0469921875,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ACM importieren.Paths[Author]"
+          TopLeft="276.666666666667,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202.666666666667,169"
+              Start="0,0"
+              End="-202.666666666667,161.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9779411764706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.9779411764706"
+                    Point2="0,45.9779411764706"
+                    Point3="-4,45.9779411764706" />
+                  <mssgle:LineSegment
+                    End="-198.666666666667,45.9779411764706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198.666666666667,45.9779411764706"
+                    Point2="-202.666666666667,45.9779411764706"
+                    Point3="-202.666666666667,49.9779411764706" />
+                  <mssgle:LineSegment
+                    End="-202.666666666667,161.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.100091145834,50.9779411764706,31.533515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ACM importieren\Publication">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ACM importieren\Venue">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ACM importieren\CitingPub">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ACM importieren\VenueSeries">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ACM importieren\Author">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

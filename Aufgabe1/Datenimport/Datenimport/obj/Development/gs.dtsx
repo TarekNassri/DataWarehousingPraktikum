@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/11/2023 10:46:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DBSERV4"
+  DTS:CreatorName="INFORMATIK\dwhprak10"
+  DTS:DTSID="{DCDC2488-D647-477D-9B91-29EDFBC6AD5D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{D2D7B3FB-21FD-4261-9FAC-B3B7F7F260CF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_extract.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{922967E7-4C0A-483B-871B-B00B0394518F}"
+      DTS:ObjectName="gs_extract.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Z:\Aufgabe1\Datenimport\Datenimport\sql\gs_extract.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_extract.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{322229AE-C682-496E-B1CE-FCE55894BD9A}"
+      DTS:ObjectName="gs_extract.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\gs_extract.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_insert.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{EE968E70-BAC3-482E-9DD8-0A146FB054FE}"
+      DTS:ObjectName="gs_insert.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Z:\Aufgabe1\Datenimport\Datenimport\sql\gs_insert.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_insert.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{480BDD8F-A5DD-4A40-AB66-E29411D449C2}"
+      DTS:ObjectName="gs_insert.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\gs_insert.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_schema.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7203AB0C-D65C-489F-A0A7-89F10ABF1045}"
+      DTS:ObjectName="gs_schema.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Z:\Aufgabe1\Datenimport\Datenimport\sql\gs_schema.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_schema.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{24F4F130-8761-429F-A8A1-1F342B02C82B}"
+      DTS:ObjectName="gs_schema.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\gs_schema.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[truncate_tables.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BBF0B5BA-C228-426C-996C-75B927C9D830}"
+      DTS:ObjectName="truncate_tables.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Z:\Aufgabe1\Datenimport\Datenimport\sql\truncate_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[truncate_tables.sql 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7406401F-508A-44E7-BAED-AA8CE31F078A}"
+      DTS:ObjectName="truncate_tables.sql 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe1 2\Datenimport\Datenimport\sql\truncate_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GS einsetzen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{15E68ECC-F19C-4880-A4A2-A760879B4CCF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GS einsetzen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="gs_insert.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GS erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{6C8260A2-7C5F-4EB6-A854-1F5805EC8BFC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GS erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="gs_schema.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GS extrahieren"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{C2BBF0D0-8FF4-455C-9CDA-060E2C345AE7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GS extrahieren"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="gs_extract.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GS importieren"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{99E96FC6-CC90-4F56-8844-1CB7FDA8DCF3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GS importieren">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GS importieren\GS"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrahiert Daten aus einer XML-Datei. Extrahieren Sie beispielsweise Katalogdaten aus einer XML-Datei, die Kataloge und Katalogelemente darstellt. Geben Sie vor der Verwendung das Schema an, und generieren Sie eine Ausgabe für jedes XML-Element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;2"
+              description="Extrahiert Daten aus einer XML-Datei. Extrahieren Sie beispielsweise Katalogdaten aus einer XML-Datei, die Kataloge und Katalogelemente darstellt. Geben Sie vor der Verwendung das Schema an, und generieren Sie eine Ausgabe für jedes XML-Element."
+              name="GS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter verwendeten XML-Daten."
+                  expressionType="Notify"
+                  name="XMLData">\\informatik\pools\public\dwhprak\data\google_scholar\GS.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter zum Angeben von XML-Daten verwendete Variable."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Definiert, wie der XML-Quelladapter XML-Daten abruft."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die vom XML-Quelladapter verwendete XML-Schemadefinition."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">\\informatik\pools\public\dwhprak\data\google_scholar\GS.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifiziert, ob ein Inlineschema verwendet wird."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Definiert, wie XML-Ganzzahltypen zugeordnet werden."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\GS importieren\GS.Outputs[Pub]"
+                  name="Pub">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Pub</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].Columns[id]"
+                      dataType="ui8"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[id]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[Title]"
+                      length="1000"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].Columns[URL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[URL]"
+                      length="1000"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[URL]"
+                      name="URL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].Columns[NoOfCitings]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[NoOfCitings]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[NoOfCitings]"
+                      name="NoOfCitings"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].Columns[Additional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[Additional]"
+                      length="1000"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[Additional]"
+                      name="Additional"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[id]"
+                      dataType="ui8"
+                      name="id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt64</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[URL]"
+                      dataType="wstr"
+                      length="255"
+                      name="URL">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[NoOfCitings]"
+                      dataType="ui2"
+                      name="NoOfCitings">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub].ExternalColumns[Additional]"
+                      dataType="wstr"
+                      length="255"
+                      name="Additional">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe]"
+                  isErrorOut="true"
+                  name="Pub-Fehlerausgabe">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifiziert das mit der Ausgabe verbundene Rowset."
+                      name="RowsetID">Pub</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[id]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[id]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[Title]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[Title]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[URL]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[URL]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[URL]"
+                      name="URL" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[NoOfCitings]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[NoOfCitings]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[NoOfCitings]"
+                      name="NoOfCitings" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[Additional]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[Additional]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[Additional]"
+                      name="Additional" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[Title]"
+                      dataType="nText"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[URL]"
+                      dataType="nText"
+                      name="URL" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[NoOfCitings]"
+                      dataType="nText"
+                      name="NoOfCitings" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\GS.Outputs[Pub-Fehlerausgabe].ExternalColumns[Additional]"
+                      dataType="nText"
+                      name="Additional" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GS importieren\Publication"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="Publication"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[gs_Publication_temp]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GS importieren\Publication.Connections[OleDbConnection]"
+                  connectionManagerID="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[id]"
+                      cachedDataType="ui8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_ID]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[id]" />
+                    <inputColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[NoOfCitings]"
+                      cachedDataType="ui2"
+                      cachedName="NoOfCitings"
+                      externalMetadataColumnId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[No_Citings]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[NoOfCitings]" />
+                    <inputColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[URL]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="URL"
+                      externalMetadataColumnId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[URL]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[URL]" />
+                    <inputColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].Columns[Additional]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Additional"
+                      externalMetadataColumnId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Additional]"
+                      lineageId="Package\GS importieren\GS.Outputs[Pub].Columns[Additional]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Publication_ID]"
+                      dataType="numeric"
+                      name="Publication_ID"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Titel]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Titel" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[No_Citings]"
+                      dataType="i4"
+                      name="No_Citings" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[URL]"
+                      dataType="wstr"
+                      length="1000"
+                      name="URL" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Authoren]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Authoren" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Venue_Jahr]"
+                      dataType="i4"
+                      name="Venue_Jahr" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Venue_Name]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Venue_Name" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Additional]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Additional" />
+                    <externalMetadataColumn
+                      refId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[Venue_ID]"
+                      dataType="numeric"
+                      name="Venue_ID"
+                      precision="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GS importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GS importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GS importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GS importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GS importieren\Publication.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GS importieren.Paths[Pub]"
+              endId="Package\GS importieren\Publication.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Pub"
+              startId="Package\GS importieren\GS.Outputs[Pub]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{A44763BE-9A9D-4D3F-81BE-CFF90E88EC35}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A56D102A-5F40-4593-B3D1-B8E46A7B9BBC}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="truncate_tables.sql 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{24E53EDC-D0BE-413E-BF3D-D2B6AD0B28AC}"
+      DTS:From="Package\GS erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\Truncate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A6DDDBEA-804D-4B72-80F7-F3731A662397}"
+      DTS:From="Package\Truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 1"
+      DTS:To="Package\GS importieren" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{577D1FFB-961B-4D6D-8418-283AC4249CA3}"
+      DTS:From="Package\GS importieren"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 2"
+      DTS:To="Package\GS extrahieren" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{FAA0E724-56C6-4223-B3DA-DF1E0B77DB92}"
+      DTS:From="Package\GS extrahieren"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 3"
+      DTS:To="Package\GS einsetzen" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\GS einsetzen"
+          TopLeft="450,449" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\GS erstellen"
+          TopLeft="459,86" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\GS extrahieren"
+          TopLeft="449,357" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\GS importieren"
+          TopLeft="449.5,259.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Truncate"
+          TopLeft="462,178" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="524.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="523.25,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5"
+              Start="0,0"
+              End="0,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="523.75,301.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5"
+              Start="0,0"
+              End="0,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 3]"
+          TopLeft="521.75,399">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\GS importieren">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\GS importieren\Publication"
+          TopLeft="484,264" />
+        <NodeLayout
+          Size="92,42"
+          Id="Package\GS importieren\GS"
+          TopLeft="505,145" />
+        <EdgeLayout
+          Id="Package\GS importieren.Paths[Pub]"
+          TopLeft="550,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GS importieren\Publication">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

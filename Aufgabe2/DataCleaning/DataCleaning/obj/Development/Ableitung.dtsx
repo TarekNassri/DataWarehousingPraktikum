@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2024 7:06:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DBSERV4"
+  DTS:CreatorName="INFORMATIK\dwhprak10"
+  DTS:DTSID="{231AB369-F330-4A0F-B2A3-8A7F78F5CBD7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{9CB96036-29E4-417E-B2FB-B5BFB0DE99AD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C601F525-95C7-4D7D-B552-890B9826501E}"
+      DTS:ObjectName="acm_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_author_clean.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9B7E66F2-5A8B-43B3-98BE-E089BE8F6526}"
+      DTS:ObjectName="acm_author_clean.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_author_clean.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_author_institution.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{E1B096F2-47F0-41EB-AAC0-4FC87B5C96DC}"
+      DTS:ObjectName="acm_author_institution.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_author_institution.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_helper_Selbstzitat_View.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{1FB2C5A5-4489-4482-879B-1A25027F1CDB}"
+      DTS:ObjectName="acm_helper_Selbstzitat_View.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_helper_Selbstzitat_View.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{39A51C1E-C228-4D90-8B59-32F9D40295B4}"
+      DTS:ObjectName="acm_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_Zitat_Autoren_View.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2B560C0C-64F5-40D2-A762-1C52952F0131}"
+      DTS:ObjectName="acm_Zitat_Autoren_View.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_Zitat_Autoren_View.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[acm_zitierte_Autoren_View.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{84BBCEC3-E0E6-4804-BD28-1364CD96CBFC}"
+      DTS:ObjectName="acm_zitierte_Autoren_View.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\acm_zitierte_Autoren_View.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[add_acm_Selbstzitat.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C7C88E1C-1CC9-4563-919A-18AE27B1C61B}"
+      DTS:ObjectName="add_acm_Selbstzitat.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\add_acm_Selbstzitat.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[add_acm_Selbstzitat_1.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{5756C93C-05FC-4AD9-ACEC-2EB053259810}"
+      DTS:ObjectName="add_acm_Selbstzitat_1.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\add_acm_Selbstzitat_1.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[add_self_cite.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0F3A848D-55B7-45AC-B784-B556041F01D9}"
+      DTS:ObjectName="add_self_cite.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\add_self_cite.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clean_institution.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BFE853A7-3A83-43A3-B710-45A9289E1E73}"
+      DTS:ObjectName="clean_institution.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\clean_institution.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dblp_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F54A3026-B68A-42F7-BB22-6C661E67C2A7}"
+      DTS:ObjectName="dblp_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dblp_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7A17E92D-952D-4FF0-80A1-C0C532577EDC}"
+      DTS:ObjectName="dblp_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dbpl_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BD530AF5-3D8F-4599-9F8C-1B2267870120}"
+      DTS:ObjectName="dbpl_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dbpl_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D9CA4B2A-2BA5-4728-91F9-FE20410F0492}"
+      DTS:ObjectName="dbpl_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\dblp_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_authors_publication_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{78B4620B-0FF4-4E40-A7E3-BA6ED7C199A0}"
+      DTS:ObjectName="gs_authors_publication_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_authors_publication_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_publication.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{5EBD1030-903C-4E32-8047-482A7BEFB88A}"
+      DTS:ObjectName="gs_publication.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_publication.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gs_view.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{81E5BB0F-0664-42A1-A1C6-E76F4D2D60FA}"
+      DTS:ObjectName="gs_view.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\gs_view.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[match_schemas.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{141A9264-54A6-40C8-BFA8-B83886B0D4F5}"
+      DTS:ObjectName="match_schemas.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\dwhprak09.INFORMATIK.000\Desktop\Aufgabe2\DataCleaning\DataCleaning\sql\match_schemas.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[windorf.informatik.uni-leipzig.de.dwhprak09]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+      DTS:ObjectName="windorf.informatik.uni-leipzig.de.dwhprak09">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=windorf.informatik.uni-leipzig.de;Initial Catalog=dwhprak09;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ACM-Funktion clean_institution erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{52adb622-b26e-4e62-a688-4e03ebb5817f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM-Funktion clean_institution erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="clean_institution.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{a7da3fd4-31b0-465f-b127-69d3d0b7e8a1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_author_institution.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\acm_helper_Selbstzitat_View"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{27CE3B98-C910-4E05-A772-1DB023BA58DC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="acm_helper_Selbstzitat_View"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_helper_Selbstzitat_View.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\acm_Zitat_Autoren_View erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{A94A7E2F-C617-4D92-B38F-98EB41315D8F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="acm_Zitat_Autoren_View erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_Zitat_Autoren_View.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\acm_zitierte_Autoren_View erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{633988A0-BB1B-4CA2-B403-CF69B20CDFAB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="acm_zitierte_Autoren_View erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_zitierte_Autoren_View.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean ACM_Author-Tabelle erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{71bd4559-feb4-4f01-a3c7-7276e669e7ca}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean ACM_Author-Tabelle erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="acm_author_clean.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GS-Tabelle für Fuzzy Grouping erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{02445244-a211-4ca7-8844-c335f59ca374}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GS-Tabelle für Fuzzy Grouping erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="gs_publication.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Match-Schema erstellen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{ff9fe44c-464c-4c9e-bae6-071a00505064}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Match-Schema erstellen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="match_schemas.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Selbstzitat von ACM_CitingPub"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{d88cb427-402d-4baf-8f9c-16d571d2a2f6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Selbstzitat von ACM_CitingPub"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="add_self_cite.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Selbstzitierung einfügen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{552FC73E-F96F-4969-9571-AA2641305128}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Selbstzitierung einfügen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="add_acm_Selbstzitat.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Selbstzitierung einfügen (CitingPub)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{B4C07C8C-ED68-4634-98DD-5B829B6E2388}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Selbstzitierung einfügen (CitingPub)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="add_acm_Selbstzitat_1.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Views erstellen"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequenzcontainer"
+      DTS:DTSID="{4bbecfd8-2b17-48b7-a40b-1c529c18a663}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Views erstellen">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\ACM-View"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{17e81f6a-29bd-4d5f-a1b0-c21825d64899}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ACM-View"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="acm_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\acm_authors_publication_view erstellen"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{d6dde8cf-8601-472b-8db8-6576ba1f2901}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="acm_authors_publication_view erstellen"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="acm_authors_publication_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\DBLP-View"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{82647d5d-c1ba-483d-a435-6361f75958e3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DBLP-View"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="dblp_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\dblp_authors_publication_view erstellen"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{257e81ac-4981-413c-83e1-9ddbf011467a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="dblp_authors_publication_view erstellen"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="dblp_authors_publication_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\GS-View"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{b4a7703f-8598-4131-9c4b-b5c6610769d5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GS-View"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="gs_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Views erstellen\gs_authors_publication_view erstellen"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Task &quot;SQL ausführen&quot;"
+          DTS:DTSID="{e8856da5-ad5a-4323-97c3-8b3b7d15d647}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="gs_authors_publication_view erstellen"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D268EDA1-6726-40D9-9ABF-6018AC4DA37C}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="gs_authors_publication_view.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Views erstellen.PrecedenceConstraints[Einschränkung]"
+          DTS:CreationName=""
+          DTS:DTSID="{36c3698d-cf98-421e-a381-55e558980768}"
+          DTS:From="Package\Views erstellen\acm_authors_publication_view erstellen"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Einschränkung"
+          DTS:To="Package\Views erstellen\ACM-View" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Views erstellen.PrecedenceConstraints[Einschränkung 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{b0772c16-cff3-40d4-a12e-1ecda1709a6d}"
+          DTS:From="Package\Views erstellen\dblp_authors_publication_view erstellen"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Einschränkung 1"
+          DTS:To="Package\Views erstellen\DBLP-View" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Views erstellen.PrecedenceConstraints[Einschränkung 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{34ebcfe3-aeaf-471f-a3cc-e028be743dc7}"
+          DTS:From="Package\Views erstellen\gs_authors_publication_view erstellen"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Einschränkung 2"
+          DTS:To="Package\Views erstellen\GS-View" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{FB6C745D-2790-4435-8DA8-E38C9C84C871}"
+      DTS:From="Package\GS-Tabelle für Fuzzy Grouping erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\Match-Schema erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{18D50C3D-F65B-49B7-9944-B5724FE1CEFC}"
+      DTS:From="Package\Match-Schema erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 1"
+      DTS:To="Package\Views erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{24727C08-D524-47C5-8CCD-E08465637084}"
+      DTS:From="Package\acm_zitierte_Autoren_View erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 10"
+      DTS:To="Package\Selbstzitierung einfügen (CitingPub)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{06bf39f7-4db3-4753-bb3f-bdcf0920e041}"
+      DTS:From="Package\Selbstzitat von ACM_CitingPub"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 2"
+      DTS:To="Package\Clean ACM_Author-Tabelle erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{f4bf5bc5-d3c6-42b5-8c31-4f9590fb8cfa}"
+      DTS:From="Package\Clean ACM_Author-Tabelle erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 3"
+      DTS:To="Package\ACM-Tabelle für Fuzzy Grouping erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{1e32d49a-8556-4740-a789-2674fbfdef9c}"
+      DTS:From="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 4"
+      DTS:To="Package\ACM-Funktion clean_institution erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{41183e29-8def-43ce-bc12-23cf010df248}"
+      DTS:From="Package\ACM-Funktion clean_institution erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 5"
+      DTS:To="Package\GS-Tabelle für Fuzzy Grouping erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{75DDC901-42A9-439A-81F8-95A539D3DE58}"
+      DTS:From="Package\Views erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 6"
+      DTS:To="Package\acm_helper_Selbstzitat_View" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{F96748CB-2B26-464D-B63A-4D489A0EDB5A}"
+      DTS:From="Package\acm_helper_Selbstzitat_View"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 7"
+      DTS:To="Package\Selbstzitierung einfügen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{1BDF1079-17BE-4BAB-9B67-AAD7813B3C8F}"
+      DTS:From="Package\Selbstzitierung einfügen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 8"
+      DTS:To="Package\acm_Zitat_Autoren_View erstellen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{41101CD3-6C9F-4B4E-B4E7-24D9C400379B}"
+      DTS:From="Package\acm_Zitat_Autoren_View erstellen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 9"
+      DTS:To="Package\acm_zitierte_Autoren_View erstellen" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\acm_helper_Selbstzitat_View"
+          TopLeft="500,716" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\acm_Zitat_Autoren_View erstellen"
+          TopLeft="496,859" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\acm_zitierte_Autoren_View erstellen"
+          TopLeft="493,933" />
+        <NodeLayout
+          Size="268,42"
+          Id="Package\ACM-Funktion clean_institution erstellen"
+          TopLeft="466,216.5" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\ACM-Tabelle für Fuzzy Grouping erstellen"
+          TopLeft="467,141.5" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Clean ACM_Author-Tabelle erstellen"
+          TopLeft="483,69.5" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\GS-Tabelle für Fuzzy Grouping erstellen"
+          TopLeft="473,284.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Match-Schema erstellen"
+          TopLeft="505,353" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Selbstzitat von ACM_CitingPub"
+          TopLeft="491.5,0" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Selbstzitierung einfügen"
+          TopLeft="517,785" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Selbstzitierung einfügen (CitingPub)"
+          TopLeft="499,999" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\Views erstellen\acm_authors_publication_view erstellen"
+          TopLeft="14,20" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Views erstellen\ACM-View"
+          TopLeft="82,105" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\Views erstellen\dblp_authors_publication_view erstellen"
+          TopLeft="316,20" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Views erstellen\DBLP-View"
+          TopLeft="388,107" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Views erstellen\gs_authors_publication_view erstellen"
+          TopLeft="603,22" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\Views erstellen\GS-View"
+          TopLeft="673,107" />
+        <EdgeLayout
+          Id="Package\Views erstellen.PrecedenceConstraints[Einschränkung]"
+          TopLeft="146.25,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Views erstellen.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="451.25,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Views erstellen.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="732,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="900,206"
+          Size="900,249"
+          Id="Package\Views erstellen"
+          TopLeft="158,433" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="603,326.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5"
+              Start="0,0"
+              End="0,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="604.25,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 10]"
+          TopLeft="620.5,975">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="604.75,42">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.5"
+              Start="0,0"
+              End="0,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 3]"
+          TopLeft="605.25,111.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 4]"
+          TopLeft="601.75,183.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 5]"
+          TopLeft="602.75,258.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 6]"
+          TopLeft="608,682">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 7]"
+          TopLeft="610.5,758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 8]"
+          TopLeft="614.5,827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 9]"
+          TopLeft="617,901">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
